@@ -8,10 +8,15 @@
 
 
 users = [
-  {first_name: 'Jay', last_name: 'Issuree', user_name: 'Namast-Jay', email: 'jay@mail.com', password: 'jesssmells'},
+  {first_name: 'Jay', last_name: 'Issuree', user_name: 'Namast-Jay', email: 'jay@mail.com', password: 'jesssmells', },
   {first_name: 'Jess', last_name: 'Marais', user_name: 'JessRocksSocks', email: 'jess@mail.com', password: 'jaysmells'}
   ]
 
 users.each do |user|
   User.create(user)
 end
+
+
+Post.create!(message: "I love Jay so much he is so nice and cool", user_id: 1)
+Post.create!(message: "Chewing gum is my favourite food", user_id: 2)
+
