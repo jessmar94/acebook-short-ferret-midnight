@@ -19,14 +19,17 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.where(id: params[:id]).first
-    return if @post
+    
+      flash[:notice] = 'Sorry, you are not able to edit this post.' if current_user != @post.user
 
-    redirect_to root_path
+    redirect_to posts_url
   end
 
   def update
     @post = Post.where(id: params[:id]).first
-    if @post.update(message: params[:post][:message])
+    if current_user != @post.user
+      flash[:notice] = 'Sorry, you are not able to edit this post.'
+    elsif @post.update(message: params[:post][:message])
       flash[:notice] = 'Successfully updated the post!'
       redirect_to posts_url
     else
@@ -37,7 +40,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.where(id: params[:id]).first
-    if @post.destroy
+    if current_user != @post.user
+      flash[:alert] = 'Sorry, you may only delete your own posts.'
+    elsif @post.destroy
       flash[:notice] = 'Successfully deleted the post!'
     else
       flash[:alert] = 'Couldn’t delete the post...'
