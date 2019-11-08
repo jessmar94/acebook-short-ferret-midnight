@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -19,10 +20,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.where(id: params[:id]).first
-    
-      flash[:notice] = 'Sorry, you are not able to edit this post.' if current_user != @post.user
-
-    redirect_to posts_url
+    if (Time.now - @post.created_at) > 600
+      redirect_to posts_url
+      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
+     else
+       return if @post
+      
+       redirect_to root_path
+    end
   end
 
   def update
