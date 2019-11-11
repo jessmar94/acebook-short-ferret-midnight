@@ -27,7 +27,6 @@
               <div class="navbar-nav">
                 <a href="/" class="nav-item nav-link active">Homepage</a>
                 <a href="#" class="nav-item nav-link"><%=current_user.username%></a>
-                <a href="#" class="nav-item nav-link">Feed</a>
               </div>
               <div class="navbar-nav ml-auto">
                 <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-item nav-link'%>
