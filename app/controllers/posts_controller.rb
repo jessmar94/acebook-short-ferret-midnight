@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
      else
        return if @post
-      
+
        redirect_to root_path
     end
   end
@@ -53,6 +53,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    new
   end
 
   private
