@@ -16,8 +16,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: lavender;
+  font-family: 'Poppins', sans-serif;
 }
 
 #main-nav {
@@ -52,7 +52,7 @@ body {
   overflow: hidden;
 }
 
-#navbar:before{
+#navbar:before {
   content: "";
   position: absolute;
   top: 0;
@@ -113,15 +113,15 @@ body {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 35px;
   color: inherit;
 }
 
-.btn-default.active,
-.btn-default:active,
-.btn-default:focus,
 .btn-default:hover,
-.open > .dropdown-toggle.btn-default {
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
   background-color: #343A40;
   border-color: #DDDDDD;
   color: white;
@@ -152,4 +152,36 @@ body {
 
 .vote-pic {
   width: 40px;
+}
+
+.custom-file {
+  width: 27%
+}
+
+.upvote {
+  color: green
+}
+
+.downvote {
+  color: red
+}
+
+.comment {
+  width: 90%
+}
+
+.prof_image {
+  width: 400px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid black;
+}
+
+.hero_image {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.avatar-link {
+  padding-left: 22px;
 }
