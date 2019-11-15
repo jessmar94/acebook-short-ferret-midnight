@@ -9,6 +9,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params(params['wall']))
+    if @post.message.length < 1
+      flash[:alert] = "Sorry! Post must have at least 1 character."
+    end
     redirect_to "/users/#{params['wall']}"
   end
 
