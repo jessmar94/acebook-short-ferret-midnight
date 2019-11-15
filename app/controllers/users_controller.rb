@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    @user = User.create(user_params)
-    @user.save
-    redirect_to current_user
-  end
-
-
   def show
     if (@user = User.find_by_id(params[:id])).present?
       @post = Post.new
