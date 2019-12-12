@@ -75,3 +75,9 @@ I want to be routed to a 404 Error page if the user doesn't exist.
 > rspec # Run the tests to ensure it works
 > rubocop # Check code quality
 ```
+
+## Screenshots
+
+![Homepage](homepage.png)
+
+![User Wall](user_wall.png)
